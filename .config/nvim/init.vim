@@ -1,9 +1,10 @@
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
-Plug 'mcchrish/nnn.vim'
 Plug 'junegunn/goyo.vim'
-Plug 'mhinz/vim-startify'
-Plug 'itchyny/lightline.vim'
+Plug 'preservim/nerdtree'
+"Plug 'mhinz/vim-startify'
+Plug 'vim-airline/vim-airline'
+"Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
 Plug 'godlygeek/tabular'
@@ -15,6 +16,7 @@ call plug#end()
 set number relativenumber
 set clipboard=unnamedplus
 set fillchars+=vert:\ 
+set noswapfile
 colorscheme nord
 
 " Mappings
@@ -33,10 +35,10 @@ map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
 " Lightline
-set noshowmode
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
+"set noshowmode
+"let g:lightline = {
+"      \ 'colorscheme': 'nord',
+"      \ }
 
 " Goyo
 function! s:goyo_enter()
@@ -51,5 +53,3 @@ function! s:goyo_enter()
   endfunction
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 
-" nnn
-let g:nnn#layout        = { 'right': '~20%' }
