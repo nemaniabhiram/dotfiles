@@ -1,7 +1,9 @@
 # General Settings
 set fish_greeting
-set -x EDITOR nvim
 set -x TERMINAL alacritty
+set -x BAT_THEME Nord
+set -x NNN_PLUG 'p:preview-tui;e:preview-tui-ext'
+set -x NNN_FIFO /tmp/nnn.fifo nnn
 
 # Colors
 set fish_color_normal normal
@@ -32,8 +34,14 @@ set fish_pager_color_progress brwhite --background=cyan
 
 # Aliases
 alias v="nvim"
-alias u="yay -Syu --noconfirm"
-alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias rr="./.scripts/roll.sh"
+alias l="ls -1A --color=always --group-directories-first"
+alias l.="ls -1d .* --color=always --group-directories-first"
+# alias lf="ls -1 --color=always --group-directories-first"
+alias ld="ls -lAh --color=always --group-directories-first"
+alias rm="rm -i"
+alias cp="cp -i"
+alias mv="mv -i"
 
 # Vi Mode
 function fish_user_key_bindings

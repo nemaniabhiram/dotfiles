@@ -1,15 +1,15 @@
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/goyo.vim'
-Plug 'preservim/nerdtree'
-"Plug 'mhinz/vim-startify'
-Plug 'vim-airline/vim-airline'
-"Plug 'itchyny/lightline.vim'
+Plug 'mhinz/vim-startify'
+Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
 Plug 'ryanoasis/vim-devicons'
 Plug 'godlygeek/tabular'
 Plug 'junegunn/fzf.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'liuchengxu/vim-which-key'
+Plug 'kevinhwang91/rnvimr'
 call plug#end()
 
 " General Settings
@@ -18,9 +18,12 @@ set clipboard=unnamedplus
 set fillchars+=vert:\ 
 set noswapfile
 colorscheme nord
+set mouse=a
+set showtabline=2
 
 " Mappings
-let mapleader =" "
+let g:mapleader = "\<Space>"
+nnoremap <silent> <leader> :<c-u>WhichKey '<Space>'<CR>
 :imap ii <Esc>
 map <leader>f :Goyo<CR>
 map <C-h> <C-w>h
@@ -35,21 +38,7 @@ map <Leader>th <C-w>t<C-w>H
 map <Leader>tk <C-w>t<C-w>K
 
 " Lightline
-"set noshowmode
-"let g:lightline = {
-"      \ 'colorscheme': 'nord',
-"      \ }
-
-" Goyo
-function! s:goyo_enter()
-  if executable('tmux') && strlen($TMUX)
-    silent !tmux set status off
-    silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
-  endif
-  set noshowmode
-  set noshowcmd
-  set scrolloff=999
-  set number relativenumber
-  endfunction
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-
+set noshowmode
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ }
