@@ -1,6 +1,5 @@
 # General Settings
 set fish_greeting
-set -x TERMINAL alacritty
 set -x BAT_THEME Nord
 set -x NNN_PLUG 'p:preview-tui;e:preview-tui-ext'
 set -x NNN_FIFO /tmp/nnn.fifo nnn
