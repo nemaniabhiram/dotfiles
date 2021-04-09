@@ -1,7 +1,5 @@
 # General Settings
 set fish_greeting
-set -x NNN_PLUG 'p:preview-tui;e:preview-tui-ext'
-set -x NNN_FIFO /tmp/nnn.fifo nnn
 
 # Colors
 set fish_color_normal normal
