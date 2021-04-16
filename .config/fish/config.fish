@@ -38,6 +38,10 @@ alias ld="ls -lAh --color=always --group-directories-first"
 alias rm="rm -i"
 alias cp="cp -i"
 alias mv="mv -i"
+alias mirror="sudo reflector -f 30 -l 30 --number 10 --verbose --save /etc/pacman.d/mirrorlist"
+alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/pacman.d/mirrorlist"
+alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
+alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
 # Vi Mode
 function fish_user_key_bindings

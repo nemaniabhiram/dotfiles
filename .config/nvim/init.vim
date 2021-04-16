@@ -1,12 +1,20 @@
 " Plugins
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'junegunn/goyo.vim'
-Plug 'mhinz/vim-startify'
+Plug 'glepnir/dashboard-nvim'
 Plug 'itchyny/lightline.vim'
 Plug 'ap/vim-css-color'
-Plug 'ryanoasis/vim-devicons'
+Plug 'norcalli/nvim-colorizer.lua'
 Plug 'godlygeek/tabular'
+
 Plug 'junegunn/fzf.vim'
+
+Plug 'liuchengxu/vim-clap'
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 Plug 'arcticicestudio/nord-vim'
 Plug 'liuchengxu/vim-which-key'
 Plug 'kevinhwang91/rnvimr'
@@ -20,6 +28,8 @@ set noswapfile
 colorscheme nord
 set mouse=a
 set showtabline=2
+
+set guifont=UbuntuMono\ Nerd\ Font:h15
 
 " Mappings
 let g:mapleader = "\<Space>"
@@ -42,3 +52,10 @@ set noshowmode
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ }
+
+" Dashboard
+let g:dashboard_default_executive ='telescope'
+"let g:dashboard_default_executive ='clap'
+"let g:dashboard_default_executive ='fzf'
+let g:dashboard_disable_statusline = 1
+autocmd FileType dashboard set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2
