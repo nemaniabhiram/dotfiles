@@ -1,5 +1,6 @@
 # General Settings
 set fish_greeting
+set TERM "xterm-256color"
 
 # Colors
 set fish_color_normal normal
