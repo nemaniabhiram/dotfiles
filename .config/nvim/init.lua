@@ -13,9 +13,9 @@ vim.o.splitright           = true
 vim.o.ignorecase           = true
 vim.o.smartcase            = true
 vim.o.termguicolors        = true
-vim.g.mapleader = " "
 
-vim.o.guifont = "SauceCodePro Nerd Font:h13"
+vim.api.nvim_set_keymap('', '<Space>', '<Nop>', { noremap = true, silent=true})
+vim.g.mapleader = " "
 
 -- Dashboard
 vim.g.dashboard_custom_header = {
@@ -27,13 +27,23 @@ vim.g.dashboard_custom_header = {
 '╚═╝░░╚══╝╚══════╝░╚════╝░░░░╚═╝░░░╚═╝╚═╝░░░░░╚═╝'
 }
 
+vim.g.dashboard_default_executive = 'telescope'
+
 vim.g.dashboard_custom_section = {
-    a = {description = {'  Recently opened files                SPC f h'}, command = 'Telescope oldfiles'},
-    b = {description = {'  Find File                            SPC f f'}, command = 'Telescope find_files'},
-    c = {description = {'  Find Word                            SPC f w'}, command = 'Telescope live_grep'},
-    d = {description = {'  Load Last Session                    SPC s l'}, command = 'SessionLoad'},
+    a = {description = {'  Recently opened files                SPC f h'}, command = 'DashboardFindHistory'},
+    b = {description = {'  Find File                            SPC f f'}, command = 'DashboardFindFile'},
+    c = {description = {'  Find Word                            SPC f w'}, command = 'DashboardFindWord'},
+    d = {description = {'  Load Last Session                    SPC s l'}, command = 'SessionSave'},
+    e = {description = {'  New file                             SPC c n'}, command = 'DashboardNewFile'},
     -- e = {description = {'  Settings'}, command = ':e ~/.config/nvim/init.lua'}
 }
+
+vim.api.nvim_set_keymap('n', '<Leader>fh', ':DashboardFindHistory<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>ff', ':DashboardFindFile<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>fw', ':DashboardFindWord<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>cn', ':DashboardNewFile<CR>', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<Leader>ss', ':SessionSave<CR>', {noremap = true})
+vim.api.nvim_set_keymap('n', '<Leader>sl', ':SessionLoad<CR>', {noremap = true})
 
 --[[ require'colorizer'.setup(
   {'*';},
