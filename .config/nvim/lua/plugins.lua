@@ -4,6 +4,8 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
   use 'glepnir/dashboard-nvim'
   use {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim', 'kyazdani42/nvim-web-devicons'}}
+  -- use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+  -- use {'akinsho/nvim-bufferline.lua', requires = 'kyazdani42/nvim-web-devicons'}
   -- use 'junegunn/goyo.vim'
   -- use 'kdav5758/TrueZen.nvim'
   -- use 'ap/vim-css-color'
@@ -12,7 +14,6 @@ return require('packer').startup(function()
   use 'arcticicestudio/nord-vim'
   -- use 'liuchengxu/vim-which-key'
   use 'b3nj5m1n/kommentary'
-  -- use {'romgrk/barbar.nvim', requires = 'kyazdani42/nvim-web-devicons'}
   --[[ use {
   'glepnir/galaxyline.nvim',
     branch = 'main',
